@@ -1,0 +1,87 @@
+/*
+Structure (sorted alphabetically within each section):
+
+base HTML tags
+classes
+ids
+*/
+
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: #000;
+    background-image: url("../img/background.jpeg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.dropdown-item {
+    color: rgba(255, 255, 255, .5);
+}
+
+.hidden {
+    display: none;
+}
+
+.icons {
+    height: 100%;
+}
+
+.like-button {
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+.like-button span {
+    line-height: 14px;
+    font-size: 14px;
+    padding: 0 4px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.post {
+    border-bottom: 1px solid;
+}
+
+.post-file {
+    width: 100%;
+}
+
+.profile-img {
+    height: 50px;
+    width: 50px;
+}
+
+.text-muted {
+    color: #ccc !important;
+}
+
+#display-name {
+    padding-left: 0 !important;
+}
+
+#logged-in {
+    background-color: #ccc;
+    width: 100%;
+    max-width: 1110px;
+    padding: 15px;
+    margin: 1% 0 10%;
+}
+
+#logged-out {
+    width: 100%;
+    max-width: 430px;
+    padding: 15px;
+    margin: auto;
+}
+
+#wrapper {
+    padding-top: 36px;
+}

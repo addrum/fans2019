@@ -1,0 +1,9 @@
+runtime: python37
+entrypoint: gunicorn -b :$PORT main:app
+env_variables:
+    CLOUD_STORAGE_BUCKET: fans2019.appspot.com
+service: backend
+
+handlers:
+- url: /.*
+  script: main.app

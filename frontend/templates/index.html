@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block extraimports %}
+<script src="/static/js/index.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/css/index.css">
+{% endblock %}
+
+{% block content %}
+<div id="logged-out">
+    <!-- https://codepen.io/jakob-e/pen/PWGWox -->
+    <div id="form-signin">
+        <form id="sign-form" action="">
+            <input class="registration-radio" type="radio" name="rg" id="sign-in" checked />
+            <input class="registration-radio" type="radio" name="rg" id="sign-up" />
+            <label class="registration-label" for="sign-in">Sign in</label>
+            <label class="registration-label" for="sign-up">Sign up</label>
+            <input id="username" class="sign-up" type="text" placeholder="Username" />
+            <input id="email" class="sign-up sign-in" type="email" placeholder="Email" required="true" />
+            <input id="password" class="sign-up sign-in" type="password" placeholder="Password" required="true" />
+            <input id="password-match" class="sign-up" type="password" placeholder="Repeat Password" />
+            <button id="registration-submit" class="btn btn-dark"></button>
+        </form>
+    </div>
+</div>
+<div class="p-4" id="logged-in">
+    <form class="d-flex flex-column" id="upload-form" method="POST" enctype="multipart/form-data" action="">
+        <div class="d-flex flex-row pb-2">
+            <input class="form-control" id="caption" type="text" name="caption" placeholder="caption" maxlength="240" />
+        </div>
+        <div class="d-flex flex-row justify-content-between">
+            <div class="form-group">
+                <input id="file" type="file" name="files" multiple />
+            </div>
+            <div class="form-group">
+                <label for="release-time">Release Date/Time</label>
+                <input type="datetime-local" id="release-datetime" name="release-datetime" step="60" />
+            </div>
+            <div class="form-group">
+                <input class="btn btn-outline-dark" type="submit" name="submit" value="Submit" />
+            </div>
+        </div>
+    </form>
+    <div class="d-flex flex-column justify-content-center" id="feed">
+    </div>
+</div>
+{% endblock %}

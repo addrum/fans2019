@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block extraimports %}
+<script src="/static/js/discover.js"></script>
+{% endblock %}
+{% block content %}
+<div class="p-4" id="logged-in">
+    <div class="d-flex flex-column justify-content-center">
+        <div class="row p-2">
+            <!-- https://schier.co/blog/2014/12/05/html-templating-output-a-grid-in-a-single-loop.html -->
+            {% for user in users %}
+            {% for key, value in user.items() %}
+            <div class="col-sm text-center">
+                <p>{{ value['display_name'] }}</p>
+                <a href="#" data-toggle="modal" data-target="#{{ key }}">More</a>
+            </div>
+            {% include "discover_modal.html" %}
+            {% if loop.index % 3 == 0 and not loop.last %}
+        </div>
+        <div class="row p-2">
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
